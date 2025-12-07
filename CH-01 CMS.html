@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Mastery Series - Parvez Sir</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Gujarati -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans Gujarati', sans-serif;
+            background-color: #f0fdf4; /* Light green tint */
+            min-height: 100vh; /* Ensure full viewport height */
+        }
+        .chemical-bg {
+            /* Subtle animated gradient background for chemical feel */
+            background: linear-gradient(-45deg, #f0fdf4, #d1fae5, #ecfdf5, #a7f3d0);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .floating-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1), 0 0 40px rgba(22, 101, 52, 0.15);
+            transition: transform 0.3s ease-in-out;
+        }
+        .floating-shadow:hover {
+            transform: translateY(-3px);
+        }
+        /* New glow effect for the main content card (enhanced chemical effect) */
+        .card-glow {
+            animation: pulse-glow 3s infinite alternate;
+        }
+        @keyframes pulse-glow {
+            from { box-shadow: 0 0 10px rgba(110, 231, 183, 0.5), 0 0 20px rgba(110, 231, 183, 0.2); }
+            to { box-shadow: 0 0 15px rgba(110, 231, 183, 0.8), 0 0 30px rgba(110, 231, 183, 0.4); }
+        }
+    </style>
+</head>
+<body class="text-gray-800 chemical-bg">
+
+    <!-- Header Section (Contact Info) -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i data-lucide="flask-conical" class="text-green-700 w-7 h-7"></i>
+                <h1 class="text-lg font-bold text-green-800">Parvez Sir <span class="text-sm font-normal text-gray-500">Chemistry Classes</span></h1>
+            </div>
+            <!-- Contact Details -->
+            <div class="flex items-center space-x-3">
+                <a href="tel:7043982778" class="text-green-700 hover:text-green-900 transition flex items-center gap-1 text-sm font-semibold">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    7043982778
+                </a>
+                <a href="https://wa.me/917043982778" target="_blank" class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold hover:bg-green-700 transition flex items-center gap-1 shadow-md">
+                    <i data-lucide="message-square-text" class="w-4 h-4"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl mx-auto px-4 py-6">
+        
+        <!-- Hero Banner (Updated Tagline) -->
+        <div class="text-center mb-8">
+            <!-- UPDATED: Added (ગુજરાતી માધ્યમ) -->
+            <span class="inline-block bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full mb-2">NEET / JEE SPECIAL (ગુજરાતી માધ્યમ)</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-gray-900">
+                CHEMISTRY <span class="text-green-600">MASTERY SERIES</span>
+            </h2>
+            <p class="text-xl font-bold text-green-700 mb-2">
+                ✨ "Daily 30 minutes → Chemistry Mastery → NEET/JEE Success."
+            </p>
+            <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                તમારી તૈયારીને આપો નવી દિશા. સ્પીડ અને એક્યુરેસી વધારવા માટેનું શ્રેષ્ઠ મટીરીયલ.
+            </p>
+        </div>
+
+        <!-- Container for Dynamic Cards -->
+        <div id="content-container" class="space-y-6">
+            <!-- Cards will be injected here by JavaScript -->
+        </div>
+
+        <!-- Chemistry Humor Section (UPDATED - Removed heading) -->
+        <div class="mt-8 bg-pink-50 p-5 rounded-xl border-2 border-pink-200 text-center shadow-lg floating-shadow">
+            <p class="text-pink-900 font-extrabold text-xl">
+                "એક વાર MCQ સમજાઈ જાય, પછી તો Reactants જ નહીં, Marks પણ Balance થઈ જાય!"
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-4 mt-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="font-bold text-lg mb-1">Parvez Sir</p>
+            <p class="text-gray-400 text-sm">M.Sc. Organic Chemistry | Contact: 7043982778</p>
+            <div class="mt-2 text-gray-500 text-xs">
+                &copy; 2023 Chemistry Mastery Series. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // YOUR JSON DATA BASE
+        const chemistryData = [
+          {
+            "id": "chem_mastery_001",
+            "active": true,
+            "metadata": {
+              "subject": "Chemistry",
+              "exams": ["NEET", "JEE"],
+              "series_name": "CHEMISTRY MASTERY SERIES",
+              "chapter_number": 1,
+              "chapter_title": "અધ્યાય ૧ : રસાયણ વિજ્ઞાનની કેટલીક પાયાની સંકલ્પનાઓ",
+              "date_added": "2023-10-27"
+            },
+            "author": {
+              "name": "Parvez Sir",
+              "qualification": "M.Sc. Organic Chemistry"
+            },
+            "download_info": {
+              "file_type": "PDF",
+              "url": "https://drive.google.com/file/d/1pfCUi2wdtDOYshfBOW0GLB7or2LcCXa-/view?usp=sharing",
+              "total_mcqs": 45,
+              "has_answer_key": true
+            },
+            "content_features": [
+              "કુલ 45 NEET/JEE લેવલ MCQ",
+              "કન્સેપ્ટ + ન્યુમેરિકલ + લોજિક આધારિત પ્રશ્નો",
+              "Answer Key અંતે ઉપલબ્ધ"
+            ],
+            // SINGLE WEEKLY STRATEGY
+            "study_plan": {
+                "name": "🧪 સાપ્તાહિક MCQ માસ્ટરી પ્લાન",
+                "icon": "calendar-check",
+                "description": "આ 5-દિવસીય પ્લાન દ્વારા ઝડપ અને ચોકસાઈ સાથે આખો અધ્યાય Master કરો.",
+                "details": [
+                  "સોમવારથી શુક્રવાર: રોજ 30 મિનિટ પ્રેક્ટિસ.",
+                  "રોજનું લક્ષ્ય: 9 પ્રશ્નો (MCQs) સોલ્વ કરવા.",
+                  "કુલ 45 MCQs: 1 પૂર્ણ અધ્યાય ઝડપ અને ચોકસાઈ સાથે Master."
+                ]
+            },
+            "objectives": {
+              "main_goal": "સ્પીડ + એક્યુરેસી + કન્સેપ્ટ સ્ટ્રેન્થ",
+              "tagline": "Daily 30 minutes → Chemistry Mastery → NEET/JEE Success."
+            },
+            "notice": "દરેક વિદ્યાર્થીએ આ 45 MCQ અચૂક Solve કરવા. NEET/JEE માટે જરૂરી Speed & Accuracy માટે આ સેટ ખૂબ ઉપયોગી."
+          }
+        ];
+
+        // Function to render the data
+        function renderContent() {
+            const container = document.getElementById('content-container');
+            
+            chemistryData.forEach(item => {
+                if (!item.active) return; // Skip inactive items
+
+                // Create Card HTML - ADDED card-glow CLASS
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-xl shadow-2xl overflow-hidden border border-green-200 floating-shadow card-glow";
+
+                card.innerHTML = `
+                    <div class="bg-green-700 text-white p-5 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 -mt-3 -mr-3 bg-green-500 w-16 h-16 rounded-full opacity-30 blur-md"></div>
+                        <div class="relative z-10">
+                            <div class="flex flex-wrap gap-2 mb-2">
+                                ${item.metadata.exams.map(exam => `<span class="bg-green-800 text-xs font-bold px-2 py-1 rounded text-white">${exam}</span>`).join('')}
+                            </div>
+                            <h3 class="text-xl font-bold mb-0.5">${item.metadata.chapter_title}</h3>
+                            <p class="text-green-200 text-sm font-medium">By ${item.author.name} (${item.author.qualification})</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            
+                            <!-- Left Column: Features & Objectives -->
+                            <div class="space-y-4">
+                                
+                                <h4 class="text-md font-bold text-gray-800 flex items-center gap-2 border-b pb-1">
+                                    <i data-lucide="flask-round" class="w-4 h-4 text-green-600"></i>
+                                    PDF Highlights
+                                </h4>
+                                <ul class="space-y-2 text-sm">
+                                    ${item.content_features.map(feature => `
+                                        <li class="flex items-start gap-2 text-gray-700">
+                                            <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 shrink-0 mt-0.5"></i>
+                                            <span>${feature}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+
+                                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 mt-4">
+                                    <p class="text-yellow-800 text-xs">
+                                        <strong>📌 ખાસ સૂચના:</strong> ${item.notice}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Strategy & CTA -->
+                            <div class="flex flex-col justify-between space-y-4">
+                                
+                                <!-- Strategy Block -->
+                                <div>
+                                    <h4 class="text-md font-bold text-gray-800 flex items-center gap-2 border-b pb-1">
+                                        <i data-lucide="${item.study_plan.icon}" class="w-4 h-4 text-indigo-500"></i>
+                                        પ્રેક્ટિસની અલ્ટીમેટ વ્યૂહરચના
+                                    </h4>
+                                    <div class="bg-indigo-50 p-3 rounded-lg border border-indigo-100 mt-2">
+                                        <h5 class="text-indigo-800 font-bold text-sm mb-1">
+                                            ${item.study_plan.name}
+                                        </h5>
+                                        <ul class="list-disc list-inside text-xs text-indigo-900 ml-3 space-y-1">
+                                            ${item.study_plan.details.map(detail => `<li>${detail}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+
+                                <!-- CTA Section -->
+                                <div class="space-y-2 pt-2">
+                                    <p class="text-center text-gray-500 text-xs uppercase tracking-wider font-semibold">મુખ્ય હેતુ: ${item.objectives.main_goal}</p>
+
+                                    <a href="${item.download_info.url}" target="_blank" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center font-bold py-3 rounded-lg shadow-xl transform hover:scale-[1.01] transition-all duration-200 flex items-center justify-center gap-2">
+                                        <i data-lucide="download" class="w-5 h-5"></i>
+                                        Download PDF Material (${item.download_info.total_mcqs} MCQs)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+            
+            // Re-initialize icons for the newly added content
+            lucide.createIcons();
+        }
+
+        // Run render function on load
+        renderContent();
+    </script>
+</body>
+</html>
